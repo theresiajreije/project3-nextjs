@@ -1,10 +1,21 @@
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
+
+export const metadata: Metadata = {
+  title: "JobNow",
+  description: "Search, Find, & Apply",
+  icons: {
+    icon: "/images/fav-star.ico",
+    // shortcut: "/images/fav-star.ico",
+    // apple: "/images/fav-star.ico",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -13,9 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

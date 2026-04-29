@@ -1,19 +1,24 @@
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import Banner from "./components/banner";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      
-      <Navbar />
+    <div className="flex min-h-screen flex-col">
+      <main className="flex-1">
+      <section className="relative w-full overflow-hidden bg-[#F4F4F4]">
+  {/* GREEN RIGHT SIDE */}
+  <div className="absolute right-0 top-0 z-0 hidden h-full w-[605px] rounded-bl-[60px] bg-[#00CC99] lg:block"></div>
 
-      {/* THIS IS IMPORTANT */}
-      <main className="flex-grow">
-        {/* your page content */}
+  {/* CONTENT */}
+  <div className="relative z-10">
+    <Navbar />
+    <Banner />
+  </div>
+</section>
       </main>
 
       <Footer />
-
     </div>
   );
 }
