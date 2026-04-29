@@ -10,43 +10,67 @@ export default function Navbar() {
 
   return (
     <nav className="w-full font-[Poppins]">
-      {/* TOP BAR */}
       <div className="flex w-full items-stretch bg-[#F4F4F4]">
-        {/* LOGO + LINKS */}
-        <div className="flex flex-1 items-center justify-between px-6 py-6 lg:px-14">
-          {/* LOGO */}
-          <h1 className="flex items-center text-[32px] font-extrabold leading-none lg:text-[44px]">
-            <span className="text-black">Job</span>
+        {/* LEFT SIDE: LOGO + LINKS */}
+        <div className="flex flex-1 items-center px-6 py-6 lg:px-14">
+          <Link href="/">
+            <div className="flex h-[41px] w-[162px] items-center cursor-pointer">
+              <span className="text-[40px] font-extrabold leading-none text-black">
+                Job
+              </span>
 
-            <span className="flex items-center text-[#00CC99]">
-              N
+              <span className="text-[40px] font-extrabold leading-none text-[#00CC99]">
+                N
+              </span>
+
               <Image
                 src="/images/search-o.png"
                 alt="o"
-                width={32}
-                height={32}
-                className="mx-1 h-[24px] w-[24px] lg:h-[32px] lg:w-[32px]"
+                width={28}
+                height={28}
+                className="h-[28px] w-[28px] object-contain"
               />
-              w
-            </span>
-          </h1>
 
-          {/* DESKTOP LINKS */}
-          <div className="hidden items-center gap-14 text-[16px] font-semibold text-black lg:flex">
-            <Link href="/">Home</Link>
-            <Link href="/job">Job</Link>
-            <Link href="/about">About Us</Link>
-            <Link href="/contact">Contact</Link>
+              <span className="text-[40px] font-extrabold leading-none text-[#00CC99]">
+                w
+              </span>
+            </div>
+          </Link>
+
+          <div className="ml-[320px] hidden items-center gap-8 text-[16px] font-semibold text-black lg:flex">
+            <Link
+              href="/job"
+              className="transition duration-300 hover:text-[#00CC99]"
+            >
+              Job
+            </Link>
+
+            <Link
+              href="/about"
+              className="transition duration-300 hover:text-[#00CC99]"
+            >
+              About Us
+            </Link>
+
+            <Link
+              href="/contact"
+              className="transition duration-300 hover:text-[#00CC99]"
+            >
+              Contact
+            </Link>
           </div>
         </div>
 
         {/* RIGHT GREEN AREA */}
-        <div className="hidden items-center gap-10 bg-[#00CC99] px-14 text-white lg:flex">
-          <Link href="/signin" className="text-[16px] font-semibold">
+        <div className="hidden w-[605px] items-center justify-end gap-10 bg-[#00CC99] px-14 text-white lg:flex">
+          <Link
+            href="/signin"
+            className="text-[16px] font-normal leading-[24px] text-white transition duration-300 hover:opacity-80"
+          >
             Sign In
           </Link>
 
-          <button className="flex items-center gap-3 rounded-xl bg-[#F4F4F4] px-8 py-4 text-[16px] font-semibold text-black">
+          <button className="flex h-[39px] w-[185px] items-center justify-center gap-3 rounded-md bg-white text-[16px] font-semibold text-black transition hover:bg-[#F4F4F4]">
             <LogIn size={20} />
             Create Account
           </button>
@@ -66,16 +90,24 @@ export default function Navbar() {
       {/* MOBILE DROPDOWN */}
       {open && (
         <div className="border-t border-gray-200 bg-[#F4F4F4] lg:hidden">
-          <Link className="block border-b px-6 py-4 text-black" href="/">
-            Home
-          </Link>
-          <Link className="block border-b px-6 py-4 text-black" href="/job">
+          <Link
+            className="block border-b px-6 py-4 text-black transition hover:text-[#00CC99]"
+            href="/job"
+          >
             Job
           </Link>
-          <Link className="block border-b px-6 py-4 text-black" href="/about">
+
+          <Link
+            className="block border-b px-6 py-4 text-black transition hover:text-[#00CC99]"
+            href="/about"
+          >
             About Us
           </Link>
-          <Link className="block border-b px-6 py-4 text-black" href="/contact">
+
+          <Link
+            className="block border-b px-6 py-4 text-black transition hover:text-[#00CC99]"
+            href="/contact"
+          >
             Contact
           </Link>
 

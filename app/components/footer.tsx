@@ -3,38 +3,38 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#00CC99] px-6 py-12 font-[Poppins] text-white sm:px-10 md:px-14 lg:px-[90px] lg:pt-[110px] lg:pb-[70px]">
+   <footer className="h-[411px] bg-[#00CC99] px-6 pt-[180px] font-[Poppins] text-white sm:px-10 md:px-14 lg:px-[90px]">
       <div className="mx-auto grid max-w-[1700px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_0.6fr_0.7fr] lg:gap-[90px]">
-        
+
         {/* LOGO */}
         <div>
-          <h2 className="mb-6 flex items-center leading-none">
-            <span className="text-[34px] font-extrabold text-black lg:text-[44px]">
+          <h2 className="mb-3 flex items-center leading-none">
+            <span className="text-[40px] font-extrabold text-black">
               Job
             </span>
 
-            <span className="ml-3 text-[34px] font-extrabold text-white lg:text-[44px]">
+            <span className="text-[40px] font-extrabold text-white">
               N
             </span>
 
             <Image
               src="/images/icon-search.png"
               alt="Search"
-              width={32}
-              height={32}
-              className="h-[24px] w-[24px] object-contain brightness-0 invert lg:h-[32px] lg:w-[32px]"
+              width={28}
+              height={28}
+              className="h-[28px] w-[28px] object-contain brightness-0 invert"
               priority
             />
 
-            <span className="text-[34px] font-extrabold text-white lg:text-[44px]">
+            <span className="text-[40px] font-extrabold text-white">
               w
             </span>
           </h2>
 
-          <p className="max-w-[560px] text-[12px] leading-5 text-white md:text-[14px]">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quis
-            lacus non orci euismod vestibulum vitae ut ex.
-          </p>
+          <p className="max-w-[326px] text-[12px] font-light leading-[18px] text-white">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+  sed do eiusmod tempor incididunt ut labore.
+</p>
         </div>
 
         {/* COMPANY */}
