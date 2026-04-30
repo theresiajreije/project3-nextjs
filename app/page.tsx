@@ -3,6 +3,7 @@ import Footer from "./components/footer";
 import Banner from "./components/banner";
 import HowItWorks from "./components/how-it-works";
 import HelpDreamCompany from "./components/help-section";
+import JobCategories from "./components/job-categories";
 
 
 
@@ -22,6 +23,7 @@ export default function Home() {
         </section>
         <HowItWorks />
         <HelpDreamCompany />
+         <JobCategories/>
       </main>
 
       <Footer />
