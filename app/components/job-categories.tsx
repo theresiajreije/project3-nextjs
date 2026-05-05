@@ -140,21 +140,14 @@ export default function JobCategories() {
           </div>
         </div>
 
-        <div className="mt-[40px] flex justify-center md:mt-[53px]">
-          <a
-            href="#"
-            className="
-              inline-flex h-[40px] w-[140px] items-center justify-center
-              rounded-[10px] border-2 border-[var(--brand)]
-              bg-transparent text-[13px] font-bold text-[var(--brand)]
-              transition-all duration-300
-              hover:bg-[var(--brand)] hover:text-white hover:shadow-md
-              md:h-[50px] md:w-[170px] md:text-[15px]
-            "
-          >
-            View More
-          </a>
-        </div>
+     <div className="flex justify-center pt-10 md:pt-[68px]">
+  <a
+    href="#"
+    className="flex h-[50px] w-[153px] items-center justify-center rounded-[9px] border-2 border-[#00cc99] bg-transparent text-[16px] font-bold text-[#00cc99] transition-all duration-300 hover:bg-[#00cc99] hover:text-white hover:shadow-md"
+  >
+    View More
+  </a>
+</div>
       </div>
     </section>
   );

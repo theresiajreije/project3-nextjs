@@ -4,29 +4,25 @@ import Banner from "./components/banner";
 import HowItWorks from "./components/how-it-works";
 import HelpDreamCompany from "./components/help-section";
 import JobCategories from "./components/job-categories";
+import AddedJobs from "./components/added-jobs";
 
 
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <main className="flex-1">
-        <section className="relative w-full overflow-hidden bg-[#F4F4F4]">
-          {/* GREEN RIGHT SIDE */}
-          <div className="absolute right-0 top-0 z-0 hidden h-full w-[605px] rounded-bl-[60px] bg-[#00CC99] lg:block"></div>
+   <main className="w-full">
+    <section className="relative w-full overflow-hidden bg-[var(--left)] md:bg-[linear-gradient(to_right,var(--left)_0%,var(--left)_64%,var(--brand)_64%,var(--brand)_100%)]">
+        <Navbar />
+        <Banner />
+      </section>
 
-          {/* CONTENT */}
-          <div className="relative z-10">
-            <Navbar />
-            <Banner />
-          </div>
-        </section>
+      <section className="w-full bg-white">
         <HowItWorks />
-        <HelpDreamCompany />
-         <JobCategories/>
-      </main>
-
-      <Footer />
-    </div>
+        <HelpDreamCompany/>
+        <JobCategories />
+        <AddedJobs/>
+        <Footer/>
+      </section>
+    </main>
   );
 }

@@ -1,146 +1,189 @@
 "use client";
 
-import Link from "next/link";
-import { LogIn, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const navLinkClass =
+    "text-[var(--text)] transition-colors duration-200 hover:text-[var(--brand)]";
+
+  const navLinkWhiteClass =
+    "text-white/90 transition-colors duration-200 hover:text-white";
+
+  const primaryBtnClass =
+    "rounded-xl bg-white px-5 py-2 text-base font-bold text-[var(--text)] shadow transition-all duration-200 hover:-translate-y-[1px] hover:shadow-md active:translate-y-0";
+
+  const mobileMenuLinkClass =
+    "w-fit text-[var(--text)] transition-colors duration-200 hover:text-[var(--brand)]";
+
+  const mobileBtnClass =
+    "grid h-12 w-12 place-items-center rounded-xl bg-[var(--brand)] text-white shadow-md transition-all duration-200 hover:brightness-95 hover:shadow-lg active:scale-[0.98]";
+
   return (
-    <nav className="relative z-50 w-full">
-      <div className="mx-auto grid min-h-[80px] max-w-[1700px] grid-cols-1 lg:min-h-[95px] lg:grid-cols-[1fr_605px]">
-        {/* LEFT SIDE */}
-        <div className="flex items-center justify-between px-6 py-5 sm:px-10 md:px-14 lg:items-end lg:px-[90px] lg:pb-[10px] lg:pt-0">
-          <div className="flex items-center gap-10 lg:items-end xl:gap-[120px] 2xl:gap-[220px]">
-            {/* LOGO */}
-            <Link href="/" className="cursor-pointer">
-              <div className="flex items-end">
-                <span className="text-[34px] font-extrabold leading-none text-black sm:text-[40px]">
-                  Job
-                </span>
+    <header className="w-full overflow-hidden">
+      <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
+       <div className="hidden items-center md:grid md:grid-cols-[minmax(0,1fr)_36%]">
+          <div className="flex min-w-0 items-center bg-[var(--left)] py-5">
+            <div className="shrink-0 flex items-center leading-none">
+              <span className="text-[40px] font-extrabold text-black">Job</span>
+              <span className="text-[40px] font-extrabold text-[var(--brand)]">N</span>
 
-                <span className="text-[34px] font-extrabold leading-none text-[#00CC99] sm:text-[40px]">
-                  N
-                </span>
+              <Image
+                src="/images/search-o.png"
+                alt="Search icon"
+                width={25}
+                height={25}
+                className="h-[25px] w-[25px] object-contain"
+                priority
+              />
 
+              <span className="text-[40px] font-extrabold text-[var(--brand)]">w</span>
+            </div>
+
+            <nav className="ml-8 flex items-center gap-5 whitespace-nowrap font-bold text-[14px] lg:ml-16 lg:gap-8 lg:text-[16px] xl:ml-[120px] xl:gap-10 xl:text-[17px]">
+              <a href="#" className={navLinkClass}>Home</a>
+              <a href="#" className={navLinkClass}>Job</a>
+              <a href="#" className={navLinkClass}>About Us</a>
+              <a href="#" className={navLinkClass}>Contact</a>
+            </nav>
+          </div>
+
+          {/* RIGHT PART */}
+          <div className="flex min-w-0 items-center justify-end gap-3 bg-[var(--brand)]  md:gap-4 lg:gap-6  xl:gap-8 py-5 ">
+            <a
+              href="#"
+              className={`shrink-0 font-bold whitespace-nowrap md:text-[12px] lg:text-[15px] xl:text-base ${navLinkWhiteClass}`}
+            >
+              Sign In
+            </a>
+
+            <a
+              href="#"
+              className={`${primaryBtnClass} shrink-0 whitespace-nowrap md:px-3 md:py-[10px] md:text-[12px] lg:px-4 lg:text-[14px] xl:px-5 xl:text-base`}
+            >
+              <span className="flex items-center gap-2 whitespace-nowrap">
                 <Image
-                  src="/images/search-o.png"
-                  alt="o"
-                  width={28}
-                  height={28}
-                  className="h-[24px] w-[24px] object-contain sm:h-[28px] sm:w-[28px]"
+                  src="/images/create-account-icon.png"
+                  alt="Create account icon"
+                  width={16}
+                  height={16}
                 />
-
-                <span className="text-[34px] font-extrabold leading-none text-[#00CC99] sm:text-[40px]">
-                  w
+                Create Account
+              </span>
+            </a>
+          </div>
+        </div>
+        <div className="relative h-[70px] md:hidden">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="text-2xl font-extrabold tracking-tight text-[var(--text)]">
+              Job
+              <span className="inline-flex items-baseline text-[var(--brand)]">
+                N
+                <span className="mx-[3px] inline-flex items-center justify-center">
+                  <Image
+                    src="/images/search-o.png"
+                    alt="Search icon"
+                    width={18}
+                    height={18}
+                    className="relative top-[1px]"
+                    priority
+                  />
                 </span>
-              </div>
-            </Link>
-
-            {/* DESKTOP LINKS */}
-            <div className="hidden items-end gap-10 lg:flex">
-              <Link
-                href="/job"
-                className="text-[16px] font-semibold leading-[24px] text-black transition hover:text-[#00CC99]"
-              >
-                Job
-              </Link>
-
-              <Link
-                href="/about"
-                className="whitespace-nowrap text-[16px] font-semibold leading-[24px] text-black transition hover:text-[#00CC99]"
-              >
-                About Us
-              </Link>
-
-              <Link
-                href="/contact"
-                className="text-[16px] font-semibold leading-[24px] text-black transition hover:text-[#00CC99]"
-              >
-                Contact
-              </Link>
+                w
+              </span>
             </div>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="flex cursor-pointer items-center justify-center lg:hidden"
-          >
-            {open ? (
-              <X size={30} className="text-black" />
-            ) : (
-              <Menu size={30} className="text-black" />
-            )}
-          </button>
-        </div>
-
-        {/* RIGHT GREEN AREA - DESKTOP */}
-        <div className="hidden items-end justify-end gap-10 px-[70px] pb-[10px] text-white lg:flex">
-          <Link
-            href="/signin"
-            className="text-[16px] font-normal leading-[24px] text-white transition hover:opacity-80"
-          >
-            Sign In
-          </Link>
-
-          <Link
-            href="/signup"
-            className="flex h-[39px] w-[185px] cursor-pointer items-center justify-center gap-3 rounded-md bg-white text-[16px] font-semibold text-black transition hover:bg-[#F4F4F4]"
-          >
-            <LogIn size={20} />
-            Create Account
-          </Link>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2">
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className={mobileBtnClass}
+              aria-label="Open menu"
+            >
+              ☰
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* MOBILE DROPDOWN */}
       {open && (
-        <div className="absolute left-0 top-full w-full border-t border-gray-200 bg-[#F4F4F4] shadow-md lg:hidden">
-          <Link
+        <div className="fixed inset-0 z-[9999] md:hidden">
+          <button
+            className="absolute inset-0 bg-black/25"
+            aria-label="Close menu"
             onClick={() => setOpen(false)}
-            className="block border-b px-6 py-4 text-[16px] font-semibold text-black"
-            href="/job"
-          >
-            Job
-          </Link>
+          />
 
-          <Link
-            onClick={() => setOpen(false)}
-            className="block border-b px-6 py-4 text-[16px] font-semibold text-black"
-            href="/about"
-          >
-            About Us
-          </Link>
+          <div className="relative h-screen w-screen bg-[var(--left)]">
+            <div className="flex items-center justify-between px-6 py-5">
+              <div className="text-3xl font-extrabold tracking-tight text-[var(--text)]">
+                Job
+                <span className="inline-flex items-baseline text-[var(--brand)]">
+                  N
+                  <span className="mx-[3px] inline-flex items-center justify-center">
+                    <Image
+                      src="/images/search-o.png"
+                      alt="Search icon"
+                      width={18}
+                      height={18}
+                      className="relative top-[1px]"
+                      priority
+                    />
+                  </span>
+                  w
+                </span>
+              </div>
 
-          <Link
-            onClick={() => setOpen(false)}
-            className="block border-b px-6 py-4 text-[16px] font-semibold text-black"
-            href="/contact"
-          >
-            Contact
-          </Link>
+              <button
+                onClick={() => setOpen(false)}
+                className="grid h-11 w-11 place-items-center rounded-xl bg-white text-xl font-bold text-[var(--text)] shadow"
+              >
+                ✕
+              </button>
+            </div>
 
-          <Link
-            onClick={() => setOpen(false)}
-            className="block border-b px-6 py-4 text-[16px] font-semibold text-black"
-            href="/signin"
-          >
-            Sign In
-          </Link>
+            <div className="px-6 pb-10 pt-2">
+              <nav className="flex flex-col gap-4 text-[15px] font-bold">
+                <a href="#" className={mobileMenuLinkClass}>
+                  Home
+                </a>
+                <a href="#" className={mobileMenuLinkClass}>
+                  Job
+                </a>
+                <a href="#" className={mobileMenuLinkClass}>
+                  About Us
+                </a>
+                <a href="#" className={mobileMenuLinkClass}>
+                  Contact
+                </a>
 
-          <Link
-            onClick={() => setOpen(false)}
-            className="mx-6 my-4 flex h-[42px] items-center justify-center gap-3 rounded-md bg-[#00CC99] text-[16px] font-semibold text-white"
-            href="/signup"
-          >
-            <LogIn size={20} />
-            Create Account
-          </Link>
+                <hr className="my-3 opacity-20" />
+
+                <a href="#" className={`${mobileMenuLinkClass} font-bold`}>
+                  Sign In
+                </a>
+
+                <a
+                  href="#"
+                  className={`w-fit ${primaryBtnClass.replace("px-5 py-2", "px-4 py-2")}`}
+                >
+                  <span className="flex items-center gap-2">
+                    <Image
+                      src="/images/create-account-icon.png"
+                      alt="Create account icon"
+                      width={16}
+                      height={16}
+                    />
+                    Create Account
+                  </span>
+                </a>
+              </nav>
+            </div>
+          </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

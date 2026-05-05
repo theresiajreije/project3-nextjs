@@ -56,7 +56,10 @@ export default function Footer() {
             {["Home", "Booking", "Facilities", "About Us", "Location", "Contact"].map(
               (item) => (
                 <li key={item}>
-                  <Link href="#" className="flex items-center gap-2 hover:text-black">
+                  <Link
+                    href="#"
+                    className="flex items-center gap-2 transition duration-300 hover:text-black"
+                  >
                     <span>{">"}</span>
                     {item}
                   </Link>
@@ -72,47 +75,42 @@ export default function Footer() {
             Contact Us
           </h3>
 
-          <div className="flex flex-wrap items-center gap-5 lg:gap-6">
-            <a href="https://google.com" target="_blank" rel="noopener noreferrer">
-              <Image
-                src="/images/social-google.png"
-                alt="google"
-                width={24}
-                height={24}
-                className="h-7 w-7 lg:h-5 lg:w-5"
-              />
-            </a>
+           <div className="mt-5 flex gap-4">
 
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <Image
-                src="/images/social-facebook.png"
-                alt="google"
-                width={24}
-                height={24}
-                className="h-7 w-7 lg:h-5 lg:w-5"
-              />
-            </a>
+  <Image
+    src="/images/social-google.png"
+    alt=""
+    width={20}
+    height={20}
+    className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80"
+  />
 
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <Image
-                src="/images/social-twitter.png"
-                alt="google"
-                width={24}
-                height={24}
-                className="h-7 w-7 lg:h-5 lg:w-5"
-              />
-            </a>
+  <Image
+    src="/images/social-facebook.png"
+    alt=""
+    width={20}
+    height={20}
+    className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80"
+  />
 
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <Image
-                src="/images/social-linkedin.png"
-                alt="google"
-                width={24}
-                height={24}
-                className="h-7 w-7 lg:h-5 lg:w-5"
-              />
-            </a>
-          </div>
+  <Image
+    src="/images/social-twitter.png"
+    alt=""
+    width={20}
+    height={20}
+    className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80"
+  />
+
+  <Image
+    src="/images/social-linkedin.png"
+    alt=""
+    width={20}
+    height={20}
+    className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80"
+  />
+
+</div>
+
         </div>
 
       </div>
