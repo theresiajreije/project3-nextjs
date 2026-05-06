@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -52,27 +53,27 @@ export default function Navbar() {
 
           {/* RIGHT PART */}
           <div className="flex min-w-0 items-center justify-end gap-3 bg-[var(--brand)]  md:gap-4 lg:gap-6  xl:gap-8 py-5 ">
-            <a
-              href="#"
-              className={`shrink-0 font-bold whitespace-nowrap md:text-[12px] lg:text-[15px] xl:text-base ${navLinkWhiteClass}`}
-            >
-              Sign In
-            </a>
+           <Link
+  href="/signin"
+  className={`shrink-0 font-bold whitespace-nowrap md:text-[12px] lg:text-[15px] xl:text-base ${navLinkWhiteClass}`}
+>
+  Sign In
+</Link>
 
-            <a
-              href="#"
-              className={`${primaryBtnClass} shrink-0 whitespace-nowrap md:px-3 md:py-[10px] md:text-[12px] lg:px-4 lg:text-[14px] xl:px-5 xl:text-base`}
-            >
-              <span className="flex items-center gap-2 whitespace-nowrap">
-                <Image
-                  src="/images/create-account-icon.png"
-                  alt="Create account icon"
-                  width={16}
-                  height={16}
-                />
-                Create Account
-              </span>
-            </a>
+            <Link
+  href="/signup"
+  className={`${primaryBtnClass} shrink-0 whitespace-nowrap md:px-3 md:py-[10px] md:text-[12px] lg:px-4 lg:text-[14px] xl:px-5 xl:text-base`}
+>
+  <span className="flex items-center gap-2 whitespace-nowrap">
+    <Image
+      src="/images/create-account-icon.png"
+      alt="Create account icon"
+      width={16}
+      height={16}
+    />
+    Create Account
+  </span>
+</Link>
           </div>
         </div>
         <div className="relative h-[70px] md:hidden">
