@@ -3,11 +3,32 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#00CC99] px-6 py-12 text-white sm:px-10 md:px-14 lg:h-[411px] lg:px-[90px] lg:pt-[180px] lg:pb-0">
-      <div className="mx-auto grid max-w-[1700px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_0.6fr_0.7fr] lg:gap-[90px]">
+   <footer className="relative mt-[30px] bg-[#00CC99] text-white sm:px-10 md:px-14 lg:h-[520px] lg:px-[90px] lg:pt-[180px] lg:pb-0">
+      <div className="absolute left-1/2 top-0 w-full max-w-[1365px] -translate-x-1/2 -translate-y-1/2 px-6">
+        <div className="mx-auto flex flex-col items-center justify-center rounded-[20px] bg-[#003a2c] px-6 py-10 text-center md:px-12 md:py-14">
 
+          <h3 className="text-[35px] font-bold text-white md:text-[34px]">
+            Register your CV now!
+          </h3>
+
+          <p className="mt-8 max-w-[730px] text-[14px] leading-[20px] text-[#AAAAAA]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <a
+            href="#"
+            className="mt-6 inline-flex h-[48px] items-center justify-center rounded-[8px] border border-white px-10 text-[14px] font-bold text-white transition duration-300 hover:bg-white/10"
+          >
+            Register Now
+          </a>
+
+        </div>
+      </div>
+
+      {/* ORIGINAL CONTENT (UNCHANGED) */}
+      <div className="mx-auto grid max-w-[1700px] grid-cols-1 gap-10 pt-[88px] sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_0.6fr_0.7fr] lg:gap-[90px]">
         {/* LOGO */}
-        <div>
+        <div className="lg:mt-[37px]">
           <Link href="/">
             <h2 className="mb-3 flex cursor-pointer items-center leading-none">
               <span className="text-[40px] font-extrabold text-black">Job</span>
@@ -75,42 +96,12 @@ export default function Footer() {
             Contact Us
           </h3>
 
-           <div className="mt-5 flex gap-4">
-
-  <Image
-    src="/images/social-google.png"
-    alt=""
-    width={20}
-    height={20}
-    className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80"
-  />
-
-  <Image
-    src="/images/social-facebook.png"
-    alt=""
-    width={20}
-    height={20}
-    className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80"
-  />
-
-  <Image
-    src="/images/social-twitter.png"
-    alt=""
-    width={20}
-    height={20}
-    className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80"
-  />
-
-  <Image
-    src="/images/social-linkedin.png"
-    alt=""
-    width={20}
-    height={20}
-    className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80"
-  />
-
-</div>
-
+          <div className="mt-5 flex gap-4">
+            <Image src="/images/social-google.png" alt="" width={20} height={20} className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80" />
+            <Image src="/images/social-facebook.png" alt="" width={20} height={20} className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80" />
+            <Image src="/images/social-twitter.png" alt="" width={20} height={20} className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80" />
+            <Image src="/images/social-linkedin.png" alt="" width={20} height={20} className="cursor-pointer transition duration-300 hover:scale-110 hover:opacity-80" />
+          </div>
         </div>
 
       </div>

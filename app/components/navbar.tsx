@@ -22,7 +22,7 @@ export default function Navbar() {
     "grid h-12 w-12 place-items-center rounded-xl bg-[var(--brand)] text-white shadow-md transition-all duration-200 hover:brightness-95 hover:shadow-lg active:scale-[0.98]";
 
   return (
-    <header className="w-full overflow-hidden">
+    <header className="relative w-full overflow-visible">
       <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
        <div className="hidden items-center md:grid md:grid-cols-[minmax(0,1fr)_36%]">
           <div className="flex min-w-0 items-center bg-[var(--left)] py-5">
@@ -42,7 +42,7 @@ export default function Navbar() {
               <span className="text-[40px] font-extrabold text-[var(--brand)]">w</span>
             </div>
 
-            <nav className="ml-8 flex items-center gap-5 whitespace-nowrap font-bold text-[14px] lg:ml-16 lg:gap-8 lg:text-[16px] xl:ml-[120px] xl:gap-10 xl:text-[17px]">
+            <nav className="ml-[228px] flex items-center gap-10 whitespace-nowrap font-bold text-[17px]">
               <a href="#" className={navLinkClass}>Home</a>
               <a href="#" className={navLinkClass}>Job</a>
               <a href="#" className={navLinkClass}>About Us</a>
@@ -108,82 +108,43 @@ export default function Navbar() {
         </div>
       </div>
 
-      {open && (
-        <div className="fixed inset-0 z-[9999] md:hidden">
-          <button
-            className="absolute inset-0 bg-black/25"
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-          />
+     {open && (
+  <div className="absolute left-0 top-0 z-[9999] w-full bg-[var(--left)] px-6 pb-8 pt-5 shadow-lg md:hidden">
+    <div className="flex items-center justify-between">
+      <div className="text-2xl font-extrabold tracking-tight text-[var(--text)]">
+        Job
+        <span className="inline-flex items-baseline text-[var(--brand)]">
+          N
+          <span className="mx-[3px] inline-flex items-center justify-center">
+            <Image
+              src="/images/search-o.png"
+              alt="Search icon"
+              width={18}
+              height={18}
+              className="relative top-[1px]"
+              priority
+            />
+          </span>
+          w
+        </span>
+      </div>
 
-          <div className="relative h-screen w-screen bg-[var(--left)]">
-            <div className="flex items-center justify-between px-6 py-5">
-              <div className="text-3xl font-extrabold tracking-tight text-[var(--text)]">
-                Job
-                <span className="inline-flex items-baseline text-[var(--brand)]">
-                  N
-                  <span className="mx-[3px] inline-flex items-center justify-center">
-                    <Image
-                      src="/images/search-o.png"
-                      alt="Search icon"
-                      width={18}
-                      height={18}
-                      className="relative top-[1px]"
-                      priority
-                    />
-                  </span>
-                  w
-                </span>
-              </div>
+      <button
+        onClick={() => setOpen(false)}
+        className="text-xl font-bold text-[var(--brand)]"
+      >
+        ✕
+      </button>
+    </div>
 
-              <button
-                onClick={() => setOpen(false)}
-                className="grid h-11 w-11 place-items-center rounded-xl bg-white text-xl font-bold text-[var(--text)] shadow"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="px-6 pb-10 pt-2">
-              <nav className="flex flex-col gap-4 text-[15px] font-bold">
-                <a href="#" className={mobileMenuLinkClass}>
-                  Home
-                </a>
-                <a href="#" className={mobileMenuLinkClass}>
-                  Job
-                </a>
-                <a href="#" className={mobileMenuLinkClass}>
-                  About Us
-                </a>
-                <a href="#" className={mobileMenuLinkClass}>
-                  Contact
-                </a>
-
-                <hr className="my-3 opacity-20" />
-
-                <a href="#" className={`${mobileMenuLinkClass} font-bold`}>
-                  Sign In
-                </a>
-
-                <a
-                  href="#"
-                  className={`w-fit ${primaryBtnClass.replace("px-5 py-2", "px-4 py-2")}`}
-                >
-                  <span className="flex items-center gap-2">
-                    <Image
-                      src="/images/create-account-icon.png"
-                      alt="Create account icon"
-                      width={16}
-                      height={16}
-                    />
-                    Create Account
-                  </span>
-                </a>
-              </nav>
-            </div>
-          </div>
-        </div>
-      )}
+    <nav className="mt-10 flex flex-col items-center gap-5 text-[12px] font-bold">
+      <a href="#" className={mobileMenuLinkClass}>Home</a>
+      <a href="#" className={mobileMenuLinkClass}>Job</a>
+      <a href="#" className={mobileMenuLinkClass}>About Us</a>
+      <a href="#" className={mobileMenuLinkClass}>Contact</a>
+    </nav>
+  </div>
+)}
     </header>
   );
 }

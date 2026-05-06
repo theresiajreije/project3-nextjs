@@ -129,7 +129,7 @@ function JobCard({ title, company, desc, location, type, logo }: any) {
 export default function AddedJobs() {
   return (
     <section className="w-full overflow-hidden bg-white">
-      <div className="mx-auto w-full max-w-[1700px] px-5 py-14 sm:px-8 md:px-12 md:py-20 lg:px-[95px] lg:py-24">
+      <div className="mx-auto w-full max-w-[1700px] px-5 py-6 sm:px-8 md:px-12 md:py-20 lg:px-[95px] lg:py-24">
         <div className="mx-auto text-center">
           <h2 className="mb-6 text-[28px] font-semibold leading-[34px] text-black sm:text-[32px] sm:leading-[38px] lg:mb-8 lg:text-[36px] lg:leading-[40px]">
             Recently Added Jobs

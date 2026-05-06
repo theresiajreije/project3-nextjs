@@ -5,6 +5,8 @@ import HowItWorks from "./components/how-it-works";
 import HelpDreamCompany from "./components/help-section";
 import JobCategories from "./components/job-categories";
 import AddedJobs from "./components/added-jobs";
+import Feedback from "./components/feedback";
+
 
 
 
@@ -21,6 +23,7 @@ export default function Home() {
         <HelpDreamCompany/>
         <JobCategories />
         <AddedJobs/>
+        <Feedback/>
         <Footer/>
       </section>
     </main>
