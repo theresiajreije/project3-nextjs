@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <header className="relative w-full overflow-visible">
       <div className="container mx-auto px-6 md:px-8 lg:px-10 xl:px-12">
-       <div className="hidden items-center md:grid md:grid-cols-[minmax(0,1fr)_36%]">
+        <div className="hidden items-center md:grid md:grid-cols-[minmax(0,1fr)_36%]">
           <div className="flex min-w-0 items-center bg-[var(--left)] py-5">
             <div className="shrink-0 flex items-center leading-none">
               <span className="text-[40px] font-extrabold text-black">Job</span>
@@ -53,27 +53,27 @@ export default function Navbar() {
 
           {/* RIGHT PART */}
           <div className="flex min-w-0 items-center justify-end gap-3 bg-[var(--brand)]  md:gap-4 lg:gap-6  xl:gap-8 py-5 ">
-           <Link
-  href="/signin"
-  className={`shrink-0 font-bold whitespace-nowrap md:text-[12px] lg:text-[15px] xl:text-base ${navLinkWhiteClass}`}
->
-  Sign In
-</Link>
+            <Link
+              href="/signin"
+              className={`shrink-0 font-bold whitespace-nowrap md:text-[12px] lg:text-[15px] xl:text-base ${navLinkWhiteClass}`}
+            >
+              Sign In
+            </Link>
 
             <Link
-  href="/signup"
-  className={`${primaryBtnClass} shrink-0 whitespace-nowrap md:px-3 md:py-[10px] md:text-[12px] lg:px-4 lg:text-[14px] xl:px-5 xl:text-base`}
->
-  <span className="flex items-center gap-2 whitespace-nowrap">
-    <Image
-      src="/images/create-account-icon.png"
-      alt="Create account icon"
-      width={16}
-      height={16}
-    />
-    Create Account
-  </span>
-</Link>
+              href="/signup"
+              className={`${primaryBtnClass} shrink-0 whitespace-nowrap md:px-3 md:py-[10px] md:text-[12px] lg:px-4 lg:text-[14px] xl:px-5 xl:text-base`}
+            >
+              <span className="flex items-center gap-2 whitespace-nowrap">
+                <Image
+                  src="/images/create-account-icon.png"
+                  alt="Create account icon"
+                  width={16}
+                  height={16}
+                />
+                Create Account
+              </span>
+            </Link>
           </div>
         </div>
         <div className="relative h-[70px] md:hidden">
@@ -109,43 +109,43 @@ export default function Navbar() {
         </div>
       </div>
 
-     {open && (
-  <div className="absolute left-0 top-0 z-[9999] w-full bg-[var(--left)] px-6 pb-8 pt-5 shadow-lg md:hidden">
-    <div className="flex items-center justify-between">
-      <div className="text-2xl font-extrabold tracking-tight text-[var(--text)]">
-        Job
-        <span className="inline-flex items-baseline text-[var(--brand)]">
-          N
-          <span className="mx-[3px] inline-flex items-center justify-center">
-            <Image
-              src="/images/search-o.png"
-              alt="Search icon"
-              width={18}
-              height={18}
-              className="relative top-[1px]"
-              priority
-            />
-          </span>
-          w
-        </span>
-      </div>
+      {open && (
+        <div className="absolute left-0 top-0 z-[9999] w-full bg-[var(--left)] px-6 pb-8 pt-5 shadow-lg md:hidden">
+          <div className="flex items-center justify-between">
+            <div className="text-2xl font-extrabold tracking-tight text-[var(--text)]">
+              Job
+              <span className="inline-flex items-baseline text-[var(--brand)]">
+                N
+                <span className="mx-[3px] inline-flex items-center justify-center">
+                  <Image
+                    src="/images/search-o.png"
+                    alt="Search icon"
+                    width={18}
+                    height={18}
+                    className="relative top-[1px]"
+                    priority
+                  />
+                </span>
+                w
+              </span>
+            </div>
 
-      <button
-        onClick={() => setOpen(false)}
-        className="text-xl font-bold text-[var(--brand)]"
-      >
-        ✕
-      </button>
-    </div>
+            <button
+              onClick={() => setOpen(false)}
+              className="text-xl font-bold text-[var(--brand)]"
+            >
+              ✕
+            </button>
+          </div>
 
-    <nav className="mt-10 flex flex-col items-center gap-5 text-[12px] font-bold">
-      <a href="#" className={mobileMenuLinkClass}>Home</a>
-      <a href="#" className={mobileMenuLinkClass}>Job</a>
-      <a href="#" className={mobileMenuLinkClass}>About Us</a>
-      <a href="#" className={mobileMenuLinkClass}>Contact</a>
-    </nav>
-  </div>
-)}
+          <nav className="mt-10 flex flex-col items-center gap-5 text-[12px] font-bold">
+            <a href="#" className={mobileMenuLinkClass}>Home</a>
+            <a href="#" className={mobileMenuLinkClass}>Job</a>
+            <a href="#" className={mobileMenuLinkClass}>About Us</a>
+            <a href="#" className={mobileMenuLinkClass}>Contact</a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
